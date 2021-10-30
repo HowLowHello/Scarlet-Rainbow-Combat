@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 420b04cf8c9bde14d936e1e187326daf, type: 3}
+  m_Name: Craft Pool
+  m_EditorClassIdentifier: 
+  craftWrappers: []
+  craftPoolUIPrefab: {fileID: 5481567313438501083, guid: 8c9a476a4af8c2843a5ab1d264f16b7b, type: 3}
+  crafts:
+  - {fileID: 11400000, guid: ddd17fa0a805b8c4c97a093e75c239a9, type: 2}
+  - {fileID: 11400000, guid: 79a89b5bf4509f14181dfc40d79f98b0, type: 2}
+  - {fileID: 11400000, guid: a4808da371663f34a8934ce0f78023ff, type: 2}
+  - {fileID: 11400000, guid: 33969588d339fe74382d37e987bef42e, type: 2}
+  - {fileID: 11400000, guid: e14b87550c5ffff4fb9a97a49280cfe1, type: 2}
+  - {fileID: 11400000, guid: b28f62aaa5e4b6b4fb272365de32d49b, type: 2}
