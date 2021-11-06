@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public abstract class SlotBase : MonoBehaviour
 {
     [SerializeField] protected Image image;
-    [SerializeField] protected Button slotBotton;
+    [SerializeField] protected Button slotButton;
     private int slotIndex;
 
     public void SetSlotIndex(int index)

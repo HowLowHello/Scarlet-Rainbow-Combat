@@ -74,6 +74,7 @@ public class PlayerCraftInventoryUI : UIHasSlots
         {
             PlayerCraftInventorySlot craftSlot = (PlayerCraftInventorySlot)slot;
             craftSlot.SetSlotIndex(slotIndex);
+            craftSlot.InitButton();
             craftSlot.AssignSlotButtonCallback(() => craftSlot.PerformCraftInCombat());
             return craftSlot;
         }
@@ -91,6 +92,7 @@ public class PlayerCraftInventoryUI : UIHasSlots
         {
             PlayerCraftInventorySlot craftSlot = (PlayerCraftInventorySlot)slot;
             craftSlot.SetSlotIndex(index);
+            craftSlot.InitButton();
             craftSlot.AssignCraft(craft);
             craftSlot.InitSlotVisualization(craft.GetSprite());
             craftSlot.AssignSlotButtonCallback(() => craftSlot.PerformCraftInCombat());

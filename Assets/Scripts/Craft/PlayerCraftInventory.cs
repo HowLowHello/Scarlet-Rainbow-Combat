@@ -2,22 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCraftInventory : Inventory
+public class PlayerCraftInventory : MonoBehaviour
 {
     [SerializeField] private List<Craft> craftsOnEquip = new List<Craft>();
     [SerializeField] private PlayerCraftInventoryUI craftInventoryUI;
-        
+    private PlayerCraftInventoryUI _playerCraftInventoryUI;
+
+    private PlayerCraftInventoryUI playerCraftInventoryUI
+    {
+        get
+        {
+            _playerCraftInventoryUI = FindObjectOfType<PlayerCraftInventoryUI>();
+            if (!_playerCraftInventoryUI)
+            {
+                Debug.Log("playerCraftInventoryUI not found in Scene.");
+            }
+            return _playerCraftInventoryUI;
+        }
+    }
+
     public List<Craft> GetCraftsOnEquip()
     {
         return craftsOnEquip;
     }
 
-    public override void OpenUI()
+    public void InitCraftInventoryUI()
     {
-        throw new System.NotImplementedException();
+        playerCraftInventoryUI.InitUI(this);
     }
 
-    public override void CloseUI()
+    public void CloseUI()
     {
         throw new System.NotImplementedException();
     }

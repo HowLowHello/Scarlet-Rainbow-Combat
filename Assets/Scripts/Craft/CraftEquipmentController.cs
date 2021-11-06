@@ -5,21 +5,19 @@ using UnityEngine;
 public class CraftEquipmentController : MonoBehaviour
 {
     [SerializeField] private CraftPool craftPool;
-    [SerializeField] private PlayerCraftInventory craftInventory;
+    [SerializeField] private PlayerCraftInventory playerCraftInventory;
     [SerializeField] private Transform craftPoolUIParent;
     [SerializeField] private GameObject draggableIconPrefab;
     private GameObject instantiatedIcon;
 
     public void InstantiateDraggableCraftIcon(Craft craft, CraftPoolButton fromButton)
     {
-        GameObject iconObject = Instantiate<GameObject>(draggableIconPrefab);
-        iconObject.transform.position = Input.mousePosition;
+        GameObject iconObject = Instantiate<GameObject>(draggableIconPrefab, craftPoolUIParent);
         this.instantiatedIcon = iconObject;
         DraggableIcon icon = iconObject.GetComponent<DraggableIcon>();
         if (icon)
         {
-            icon.originalButton = fromButton;
-            icon.craft = craft;
+            icon.Init(craft, fromButton);
         }
         else
         {
@@ -28,6 +26,16 @@ public class CraftEquipmentController : MonoBehaviour
         }
           
 
+    }
+
+    public DraggableIcon GetIconBeingDragged()
+    {
+        if (instantiatedIcon == null)
+        {
+            return null;
+        }
+        DraggableIcon draggableIcon = instantiatedIcon.GetComponent<DraggableIcon>();
+        return draggableIcon;
     }
 
     public void OnIconDraggingFinished()
@@ -43,6 +51,7 @@ public class CraftEquipmentController : MonoBehaviour
     {
         craftPool.InitPool(this);
         craftPool.OpenUI();
+        playerCraftInventory.InitCraftInventoryUI();
     }
 
     public Transform GetUIParent()

@@ -14,9 +14,9 @@ public class CraftPoolSlot : SlotBase
 
     public void InitButton()
     {
-        if (slotBotton is CraftPoolButton)
+        if (slotButton is CraftPoolButton)
         {
-            CraftPoolButton poolButton = (CraftPoolButton)slotBotton;
+            CraftPoolButton poolButton = (CraftPoolButton)slotButton;
             poolButton.SetSlot(this);
         }
         else
