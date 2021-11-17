@@ -1,18 +1,33 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TimeSlider : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public List<BattleTurn> battleTurns = new List<BattleTurn>();
+    private bool canContinue = true;
+
+    public void PauseTicking()
     {
-        
+        this.canContinue = false;
     }
 
-    // Update is called once per frame
+    public void ContinueTicking()
+    {
+        this.canContinue = true;
+    }
+
     void Update()
     {
-        
+        if (canContinue)
+        {
+            this.TickAnotherTurn();
+        }
+    }
+
+    private void TickAnotherTurn()
+    {
+        throw new NotImplementedException();
     }
 }
